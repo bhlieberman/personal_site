@@ -30,3 +30,5 @@ let page =
            ~href:"https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" ();
        ])
     (body [ h1 [ txt "About me" ]; description ])
+
+let page_string = Format.asprintf "%a" (pp ()) page

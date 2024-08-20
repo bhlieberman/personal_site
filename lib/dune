@@ -1,6 +1,5 @@
 (library
  (name personal_site)
- (libraries tyxml)
- (modules index about_me nav_bar)
+ (libraries dream dream-htmx tyxml server)
  (preprocess
   (pps ppx_css)))
