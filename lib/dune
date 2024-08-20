@@ -1,0 +1,6 @@
+(library
+ (name personal_site)
+ (libraries tyxml)
+ (modules index about_me nav_bar)
+ (preprocess
+  (pps ppx_css)))
