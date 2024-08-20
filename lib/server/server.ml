@@ -7,8 +7,12 @@ let htmx_resp body =
 let router =
   router
     [
-      get "/" (from_filesystem "assets" "index.html");
+      get "/" (fun _req -> html Pages.Index.page_string);
       get "/about" (fun _req ->
-          Pages.About_me.page_string |> htmx_resp |> push "/about";
-          empty `OK);
+          Pages.About_me.page_string |> htmx_resp |> redirect "/about";
+          html Pages.About_me.page_string);
+      get "/contact" (fun _req ->
+          Pages.Contact.page_string |> htmx_resp |> push "/contact";
+          html Pages.Contact.page_string);
+      get "/static/**" (static "assets/public")
     ]

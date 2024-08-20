@@ -1,4 +1,4 @@
 (library
  (name pages)
  (libraries tyxml)
- (modules about_me index nav_bar util))
+ (modules about_me contact index nav_bar util))

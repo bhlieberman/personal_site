@@ -7,3 +7,5 @@ let trigger = Unsafe.string_attrib "hx-trigger"
 let target = Unsafe.string_attrib "hx-target"
 
 let swap = Unsafe.string_attrib "hx-swap"
+
+let get = Unsafe.string_attrib "hx-get"

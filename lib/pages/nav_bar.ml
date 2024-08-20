@@ -6,13 +6,25 @@ let tabs =
     ~a:[ a_style "display:flex;gap:10px" ]
     [
       a
-        ~a:[ on_click "console.log('Going home...')"; target "#main" ]
+        ~a:[ on_click "console.log('Going home...')"; target "#main"; get "/" ]
         [ txt "Home" ];
       a
-        ~a:[ on_click "console.log('Going to about me...')"; target "#main" ]
+        ~a:
+          [
+            on_click "console.log('Going to about me...')";
+            target "#main";
+            get "/about";
+          ]
         [ txt "About me" ];
       a
         ~a:[ on_click "console.log('Going to portfolio...')"; target "#main" ]
         [ txt "Portfolio" ];
-      a ~a:[ on_click "console.log('Going to contact...')"; target "#main" ] [ txt "Contact" ];
+      a
+        ~a:
+          [
+            on_click "console.log('Going to contact...')";
+            target "#main";
+            get "/contact";
+          ]
+        [ txt "Contact" ];
     ]
