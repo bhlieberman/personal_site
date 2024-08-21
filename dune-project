@@ -19,7 +19,7 @@
  (name personal_site)
  (synopsis "Personal webpage")
  (description "Website offering information on its author's professional and personal background.")
- (depends ocaml dune)
+ (depends ocaml dune tyxml dream dream-htmx)
  (tags
   (topics "personal website")))
 

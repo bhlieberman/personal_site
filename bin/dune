@@ -1,6 +1,4 @@
 (executable
  (public_name personal_site)
  (name main)
- (libraries personal_site)
- (preprocess
- (pps ppx_css)))
+ (libraries personal_site))
