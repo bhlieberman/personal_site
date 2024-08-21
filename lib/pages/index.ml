@@ -76,7 +76,7 @@ let page =
            ~a:
              [
                a_style
-                 "display:flex;align-self:center;align-items:center;justify-content:center;position:absolute;bottom:0;width:50%";
+                 "display:flex;align-self:center;align-items:center;justify-content:center;width:50%;margin-top:auto";
              ]
            [
              txt
