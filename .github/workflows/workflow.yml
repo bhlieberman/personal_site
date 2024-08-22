@@ -1,0 +1,27 @@
+name: Build and Push to DO Container Registry
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and push image
+    runs-on: ubuntu/latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DO_API_KEY }}
+
+      - name: Build container image
+        run: docker build -t ${{ secrets.REGISTRY_NAME }}/code-$(echo $GITHUB_SHA | head -c7) .
+
+      - name: Log in to DigitalOcean Container Registry with short-lived credentials
+        run: doctl registry login --expiry-seconds 1200
+
+      - name: Push image to DigitalOcean Container Registry
+        run: docker push ${{ secrets.REGISTRY_NAME }}/code-$(echo $GITHUB_SHA | head -c7)
