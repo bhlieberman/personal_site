@@ -69,23 +69,11 @@ let page =
            (txt "");
        ])
     (body
-       ~a:[ a_style "display:flex;flex-direction:column;align-items:center" ]
-       [
-         page_body;
-         footer
-           ~a:
-             [
-               a_style
-                 "display:flex;align-self:center;align-items:center;justify-content:center;width:50%;margin-top:auto";
-             ]
-           [
-             txt
-               "This page was built with OCaml and HTMX. You can find the \
-                source code ";
-             a
-               ~a:[ a_href "https://www.github.com/bhlieberman/personal_site" ]
-               [ txt " here" ];
-           ];
-       ])
+       ~a:
+         [
+           a_style
+             "display:flex;flex-direction:column;align-items:center;min-height:100vh;flex-grow:1";
+         ]
+       [ page_body ])
 
 let page_string = Format.asprintf "%a" (pp ()) page

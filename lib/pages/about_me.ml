@@ -33,7 +33,7 @@ let description =
       p
         [
           txt
-            "In dedicte my leisure to biblio- and cine-philia. I am an \
+            "I dedicate my leisure to biblio- and cine-philia. I am an \
              aspiring film critic as well as a published author. You can buy \
              that book at coronasamizdat.com, if you are so inclined. Your \
              support is appreciated.";
@@ -65,6 +65,6 @@ let page =
          link ~rel:[ `Stylesheet ]
            ~href:"https://cdn.jsdelivr.net/npm/water.css@2/out/water.css" ();
        ])
-    (body [ h1 [ txt "About me" ]; Nav_bar.tabs; description ])
+    (body [ h1 [ txt "About me" ]; Nav_bar.tabs; description; Footer.element ])
 
 let page_string = Format.asprintf "%a" (pp ()) page

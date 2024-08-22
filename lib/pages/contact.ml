@@ -35,7 +35,7 @@ let page =
          div
            ~a:
              [ a_style "display:flex;align-items:center;flex-direction:column" ]
-           [ h1 [ txt "Contact me" ]; Nav_bar.tabs; greeting; contact_form ];
+           [ h1 [ txt "Contact me" ]; Nav_bar.tabs; greeting; contact_form; Footer.element ];
        ])
 
 let page_string = Format.asprintf "%a" (pp ()) page
