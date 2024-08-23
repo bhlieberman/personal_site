@@ -1,4 +1,4 @@
 (library
  (name pages)
- (libraries tyxml)
+ (libraries tyxml tyxml-lwd)
  (modules about_me contact footer index nav_bar portfolio util))

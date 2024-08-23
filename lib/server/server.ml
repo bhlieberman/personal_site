@@ -59,4 +59,5 @@ let router =
       get "/portfolio" (fun _req ->
         html Pages.Portfolio.page_string);
       get "/static/**" (static "assets/public");
+      get "/js/**" (static "_build/default/bin")
     ]

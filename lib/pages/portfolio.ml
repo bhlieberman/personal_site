@@ -15,7 +15,7 @@ let project_card =
     ~a:[ a_style card_style ]
     [
       div
-        ~a:[ a_style container_style ]
+        ~a:[ a_style container_style; a_id "card" ]
         [
           i ~a:[ a_class [ "fa-solid"; "fa-plus"; "fa-10x" ] ] [];
           a
@@ -66,6 +66,7 @@ let page =
            ~a:
              [ a_style "display:flex;align-items:center;flex-direction:column" ]
            [ h1 [ txt "My Work" ]; Nav_bar.tabs; cards_display ];
+        script ~a:[a_src "js/main.js"] (txt "")
        ]
 
 let page_string = Format.asprintf "%a" (pp ()) page

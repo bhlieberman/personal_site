@@ -2,3 +2,20 @@
  (public_name personal_site)
  (name main)
  (libraries personal_site))
+
+(executable
+ (name reactive)
+ (modes byte)
+ (libraries js_of_ocaml tyxml-lwd lwd)
+ (preprocess
+  (pps js_of_ocaml-ppx)))
+
+(rule
+ (targets main.js)
+ (action
+  (run
+   %{bin:js_of_ocaml}
+   --no-runtime
+   %{lib:js_of_ocaml-compiler:runtime.js}
+   %{dep:reactive.bc}
+   -o %{targets})))
