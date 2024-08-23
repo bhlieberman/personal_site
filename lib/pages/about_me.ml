@@ -46,7 +46,7 @@ let description =
              pictured here:";
         ];
       img
-        ~a:[ a_style "max-height:500px;max-width:300px;align-self:center" ]
+        ~a:[ a_style "max-height:500px;max-width:300px;align-self:center;margin:20px 0px 20px 0px" ]
         ~src:"static/kitties.jpg" ~alt:"A picture of two very cute cats" ();
     ]
 

@@ -1,3 +1,4 @@
 (library
  (name server)
- (libraries dream dream-htmx pages))
+ (libraries dream dream-htmx lwt pages)
+ (modules email server))

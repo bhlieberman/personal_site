@@ -1,12 +1,10 @@
-FROM ocaml/opam as build
+FROM ocaml/opam AS build
 
 # Install system dependencies
-RUN sudo apt-get install --assume-yes --no-install-recommends libev-dev libssl-dev pkg-config
-
+RUN sudo apt-get install --assume-yes --no-install-recommends libev-dev \ 
+    libssl-dev pkg-config ssmtp mailutils
+    
 WORKDIR /app
-
-ENV OPAMYES = 1 \
-    OPAMJOBS = 4
 
 RUN opam init -y
 

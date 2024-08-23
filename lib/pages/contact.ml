@@ -18,15 +18,16 @@ let greeting =
         ];
     ]
 
-let contact_form =
-  form ~a:[a_style "width:500px"]
-    [
-      label ~a:[ a_label_for "msg" ] [ txt "Your message" ];
-      textarea ~a:[ a_id "msg" ] (txt "");
-      label ~a:[ a_label_for "email" ] [ txt "Enter your email" ];
-      input ~a:[ a_input_type `Email; a_id "email" ] ();
-      button ~a:[a_button_type `Submit] [(txt "Submit")]
-    ]
+let resume =
+  object_
+    ~a:
+      [a_style "margin:20px 0px 20px 0px";
+        Unsafe.string_attrib "type" "application/pdf";
+        a_data "static/resume.pdf";
+        a_width 750;
+        a_height 1000;
+      ]
+    []
 
 let page =
   html (head page_title [])
@@ -35,7 +36,7 @@ let page =
          div
            ~a:
              [ a_style "display:flex;align-items:center;flex-direction:column" ]
-           [ h1 [ txt "Contact me" ]; Nav_bar.tabs; greeting; contact_form; Footer.element ];
+           [ h1 [ txt "Contact me" ]; Nav_bar.tabs; resume; Footer.element ];
        ])
 
 let page_string = Format.asprintf "%a" (pp ()) page

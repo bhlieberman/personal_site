@@ -17,7 +17,12 @@ let tabs =
           ]
         [ txt "About me" ];
       a
-        ~a:[ on_click "console.log('Going to portfolio...')"; target "#main" ]
+        ~a:
+          [
+            on_click "console.log('Going to portfolio...')";
+            target "#main";
+            get "/portfolio";
+          ]
         [ txt "Portfolio" ];
       a
         ~a:

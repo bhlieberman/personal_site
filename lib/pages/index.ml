@@ -67,6 +67,13 @@ let page =
                  "sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ";
              ]
            (txt "");
+         script
+           ~a:
+             [
+               a_src "https://kit.fontawesome.com/d7bae1ca43.js";
+               a_crossorigin `Anonymous;
+             ]
+           (txt "");
        ])
     (body
        ~a:

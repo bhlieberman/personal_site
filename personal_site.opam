@@ -13,6 +13,9 @@ bug-reports: "https://github.com/bhlieberman/personal_site/issues"
 depends: [
   "ocaml"
   "dune" {>= "3.16"}
+  "tyxml"
+  "dream"
+  "dream-htmx"
   "odoc" {with-doc}
 ]
 build: [
