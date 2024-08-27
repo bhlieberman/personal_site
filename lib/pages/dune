@@ -1,4 +1,6 @@
 (library
  (name pages)
- (libraries tyxml tyxml-lwd)
- (modules about_me contact footer index nav_bar portfolio util))
+ (libraries tyxml tyxml-ppx)
+ (modules about_me contact footer index nav_bar portfolio rushes)
+ (preprocess
+  (pps tyxml-ppx)))

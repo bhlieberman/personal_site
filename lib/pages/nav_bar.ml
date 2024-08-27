@@ -1,35 +1,18 @@
 open Tyxml.Html
-open Util
+open Tyxml
 
 let tabs =
-  nav
-    ~a:[ a_style "display:flex;gap:10px" ]
-    [
-      a
-        ~a:[ on_click "console.log('Going home...')"; target "#main"; get "/" ]
-        [ txt "Home" ];
-      a
-        ~a:
-          [
-            on_click "console.log('Going to about me...')";
-            target "#main";
-            get "/about";
-          ]
-        [ txt "About me" ];
-      a
-        ~a:
-          [
-            on_click "console.log('Going to portfolio...')";
-            target "#main";
-            get "/portfolio";
-          ]
-        [ txt "Portfolio" ];
-      a
-        ~a:
-          [
-            on_click "console.log('Going to contact...')";
-            target "#main";
-            get "/contact";
-          ]
-        [ txt "Contact" ];
-    ]
+  let el_id = "navbar" in
+  [%html
+    "<nav id = " el_id ">\n    "
+      (List.map
+         (fun (title, link) ->
+           [%html
+             "<a _hx-target=\"#main\" _hx-get=" link ">" [ txt title ] "</a>"])
+         [
+           ("Home", "/");
+           ("About me", "/about");
+           ("Portfolio", "/portfolio");
+           ("Contact", "/contact");
+         ])
+      "\n  </nav>"]
